@@ -2,11 +2,50 @@
     border : solid 1px #9955ff
 }
 
-.table th td{
-    border-bottom:solid 1px #ddd;
-    padding : 15px;
+.table ,th ,tr ,td {
+    border-bottom: 1px solid #ccddff;
+    padding: 15px 20px;
 }
 
 .table tr :hover{
     background-color: #15378e;
+}
+
+.input{
+    width:100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius:20px;
+    border:1px solid rgb(187, 50, 0)
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 20px 50px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.button:hover{
+    background-color:rgb(187, 50, 0)
+}
+.container{
+    max-width: 800px;
+    margin: auto;
+}
+
+.center{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height:200px;
+
+}
+
+.text-center{
+    text-align: center;
+    color:red;
 }

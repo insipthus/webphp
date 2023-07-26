@@ -1,15 +1,18 @@
 <?php
-include"connect.php";
-$sql= "SELECT * FROM tbl_product  WHERE id='$_GET[id]'"; 
-$result = mysqli_query($conn,$sql);
-$row = mysqli_fetch_assoc($result) ;
+include "connect.php";
+$sql ="SELECT * FROM tbl_product WHERE id='$_GET[id]'";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result)
 ?>
-
-<form action="product_update.php?id=<?php echo $row[id]?>" method="post" enctype="multipart/form-data">
-    name <input type="text" name="name" value="<?php echo $row[name]; ?>"/>
-    prize <input type="int" name="price" value="<?php echo $row[price]; ?>"/>
-    stock <input type="int" name="stock" value="<?php echo $row[stock]; ?>"/><br />
-    description <input type="text" name="description" value="<?php echo $row[description]; ?>"/>
-    <input type="submit" value="update" />
+<link href="./styles.css" rel="stylesheet"/>
+<div class="container">
+<form action="product_update.php?id=<?php echo $row[id] ?>" method="post" enctype="multipart/form-data">
+    ชื่อสินค้า<input type="text" name="name" class="input" value="<?php echo $row[name]; ?>"/><br/>
+    ราคา<input type="text" name="price" class="input"  value="<?php echo $row[price]; ?>"/><br/>
+    จำนวนในคลัง<input type="text" name="stock" class="input" value="<?php echo $row[stock]; ?>"/><br/>
+    รายละเอียด<textarea name="description" class="input" > <?php echo $row[description]; ?></textarea> <br/>
+  
+  <input type="submit" value="update" class="button" />
 
 </form>
+</div>

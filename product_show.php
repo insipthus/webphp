@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="style.css"/>
+<div class="center">
 <?php
 include "connect.php";
 
