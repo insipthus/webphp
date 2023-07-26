@@ -6,6 +6,7 @@ $row = mysqli_fetch_assoc($result)
 ?>
 <link href="./styles.css" rel="stylesheet"/>
 <div class="container">
+<h1 class="text-center">แก้ไขข้อมูลสินค้า</h1>
 <form action="product_update.php?id=<?php echo $row[id] ?>" method="post" enctype="multipart/form-data">
     ชื่อสินค้า<input type="text" name="name" class="input" value="<?php echo $row[name]; ?>"/><br/>
     ราคา<input type="text" name="price" class="input"  value="<?php echo $row[price]; ?>"/><br/>

@@ -1,14 +1,16 @@
 .table{
-    border : solid 1px #9955ff
+    border : 1px solid  #005684;
+    width:80%;
 }
 
 .table ,th ,tr ,td {
-    border-bottom: 1px solid #ccddff;
+    border-bottom: 1px solid #2a4375;
     padding: 15px 20px;
+    border-left: #004db8 1px dashed;
 }
 
 .table tr :hover{
-    background-color: #15378e;
+    background-color: #435686;
 }
 
 .input{
@@ -17,23 +19,30 @@
     margin: 8px 0;
     box-sizing: border-box;
     border-radius:20px;
-    border:1px solid rgb(187, 50, 0)
+    border:1px solid rgb(197, 216, 52)
+}
+
+.input:focus{
+    border: 3px dashed rgb(238, 255, 108)
+    background-color lightblue;
 }
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #b6b622; 
     border: none;
-    color: white;
+    color: rgb(112, 127, 17);
     padding: 20px 50px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-    font-size: 16px;
+    border-radius:50px;
+    font-size: 30px;
+    width:100%;
 }
 .button:hover{
-    background-color:rgb(187, 50, 0)
+    background-color: #c3d127;
 }
 .container{
-    max-width: 800px;
+    max-width: 600px;
     margin: auto;
 }
 
@@ -47,5 +56,5 @@
 
 .text-center{
     text-align: center;
-    color:red;
+    color:rgb(216, 206, 0);
 }
