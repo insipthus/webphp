@@ -6,6 +6,8 @@ $sql ="SELECT * FROM tbl_member WHERE id='$_GET[id]'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result)
 ?>
+<div class="container">
+    <h1 class ="text-center">แก้ไขสมาชิก</h1>
 <form action="member_update.php?id=<?php echo $row[id] ?>" method="post" enctype="multipart/form-data">
   ชื่อ<input type="text" name="firstname" value="<?php echo $row[firstname]; ?>"class="input"/>
   นามสกุล<input type="text" name="lastname" value="<?php echo $row[lastname]; ?>"class="input"/>
