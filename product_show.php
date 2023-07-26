@@ -1,34 +1,42 @@
-<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="./styles.css" />
+ <h1 class="text-center"> แสดงสินค้า </h1> 
 <div class="center">
 <?php
-include "connect.php";
+   include "connect.php";
+   $sql = "SELECT * FROM tbl_product";
+   $result = mysqli_query($conn, $sql);
+?>
 
-$sql = "SELECT id, firstname, lastname FROM MyGuests";
-$result = mysqli_query($conn, $sql);
-
+<table class="table">
+  <tr>
+    <th width="30%"> ชื่อสินค้า </th>
+    <th width="5%"> ราคา </th>
+    <th width="5%"> จำนวนในคลัง </th>
+    <th width="50%"> รายละเอียดสินค้า </th>
+    <th width="5%"> Edit </th>
+    <th width="5%"> Delete </th>
+  </tr>
+<?php
 if (mysqli_num_rows($result) > 0) {
   // output data of each row
-  ?>
-  <table style="border;1px solid #990055">
-  <th> ชื่อ </th>
-  <th> ราคา</th>
-  <th> จำนวนในคลัง </th>
-  <th> รายละเอียด </th>
-  <th> Edit </th>
-  <th> Delete </th>
-  <?php
+ 
   while($row = mysqli_fetch_assoc($result)) {
-    ?>
-    <tr>
-      <td><?php echo"$row[name] ";?> </td>
-      <td><?php echo"$row[price]";?> </td>
-      <td><?php echo"$row[stock]";?> </td>
-      <td><?php echo"$row[description]";?> </td>
-      <td><?php echo"a href = 'product_edit.php?id=$row[id]'> Edit </a>";?> </td>
-    <td><?php echo"a href = 'product_del.php?id=$row[id]'> Delete </a>";?> </td>
-  </tr>
-  <?php
+?>
+ <tr>
+<td><?php echo"$row[name]"; ?> </td>
+<td><?php echo"$row[price]"; ?> </td>
+<td><?php echo"$row[stock] "; ?> </td>
+<td><?php echo"$row[description]"; ?> </td>
+<td><?php echo"<a href='product_edit.php?id=$row[id]'> แก้ไข </a>"; ?></td>
+<td><?php echo"<a href='product_del.php?id=$row[id]'> ลบ </a>" ?></td>
+ </tr>
+<?php
   }
+?>
+
+</table>
+
+<?php
 } else {
   echo "0 results";
 }
@@ -36,3 +44,5 @@ if (mysqli_num_rows($result) > 0) {
 mysqli_close($conn);
 
 ?>
+
+</div>

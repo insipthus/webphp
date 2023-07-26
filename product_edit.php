@@ -12,7 +12,7 @@ $row = mysqli_fetch_assoc($result)
     จำนวนในคลัง<input type="text" name="stock" class="input" value="<?php echo $row[stock]; ?>"/><br/>
     รายละเอียด<textarea name="description" class="input" > <?php echo $row[description]; ?></textarea> <br/>
   
-  <input type="submit" value="update" class="button" />
+<input type="submit" value="update" class="button" />
 
 </form>
 </div>
